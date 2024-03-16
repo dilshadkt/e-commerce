@@ -15,9 +15,15 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
+body {
+  background: #ffff;
+}
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+::-webkit-scrollbar {
+  display: none;
 }
