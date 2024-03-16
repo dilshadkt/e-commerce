@@ -7,6 +7,7 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/navigation";
 import Cookies from "js-cookie";
+import Link from "next/link";
 const page = () => {
   const { register, handleSubmit, watch } = useForm();
   const [error, setError] = useState<boolean>(false);
@@ -48,6 +49,12 @@ const page = () => {
           />
           {error && <p className="text-[12px] my-2 text-red-500">{error}</p>}
           <LongButton bgcolor="#098ffd" value="login" />
+          <p className="text-[13px]">
+            Don't have an account ?{" "}
+            <Link href={"/auth/signin"}>
+              <span className="cursor-pointer font-bold">SignIn</span>
+            </Link>
+          </p>
         </form>
         {loading && <Load />}
       </div>

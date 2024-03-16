@@ -51,23 +51,31 @@ const Navbar = () => {
                   COLLECTION
                 </li>
               </Link>
-              <li className="mx-3 text-sm font-medium hover:text-blue-500 cursor-pointer">
-                LOOKBOOK
-              </li>
-              <li className="mx-3 text-sm font-medium hover:text-blue-500 cursor-pointer">
-                SALE
-              </li>
+              <Link href={"/collection/lookbook"}>
+                <li className="mx-3 text-sm font-medium hover:text-blue-500 cursor-pointer">
+                  LOOKBOOK
+                </li>
+              </Link>
+              <Link href={"/collection/sale"}>
+                <li className="mx-3 text-sm font-medium hover:text-blue-500 cursor-pointer">
+                  SALE
+                </li>
+              </Link>
             </ul>
           </div>
         </div>
         <div className="flex-1 flex items-center justify-end">
           <ul className="flex items-center">
-            <li className="mx-3 text-sm font-medium hover:text-blue-500 cursor-pointer">
-              OUR STORY
-            </li>
-            <li className="mx-3 text-sm font-medium hover:text-blue-500 cursor-pointer">
-              CONTACT
-            </li>
+            <Link href={"/collection/ourStory"}>
+              <li className="mx-3 text-sm font-medium hover:text-blue-500 cursor-pointer">
+                OUR STORY
+              </li>
+            </Link>
+            <Link href={"/collection/all"}>
+              <li className="mx-3 text-sm font-medium hover:text-blue-500 cursor-pointer">
+                CONTACT
+              </li>
+            </Link>
             <li className="mx-3 cursor-pointer  ">
               <label htmlFor="my-drawer-4">
                 <Image src={cart} alt="cart" width={24} />

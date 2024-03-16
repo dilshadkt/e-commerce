@@ -7,6 +7,7 @@ import axios from "@/app/config/axios/axiosInstance";
 import Cookies from "js-cookie";
 import { useRouter } from "next/navigation";
 import Load from "@/app/components/load/Load";
+import Link from "next/link";
 const page = () => {
   const { register, watch, handleSubmit } = useForm();
   const [loading, setLoading] = useState(false);
@@ -64,6 +65,12 @@ const page = () => {
           />
           {error && <p className="text-[12px] my-2 text-red-500">{error}</p>}
           <LongButton bgcolor="#098ffd" value="SignIn" />
+          <p className="text-[13px]">
+            Already have an account ?{" "}
+            <Link href={"/auth/login"}>
+              <span className="cursor-pointer font-bold">Login</span>
+            </Link>
+          </p>
         </form>
         {loading && <Load />}
       </div>
