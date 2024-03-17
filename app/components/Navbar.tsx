@@ -7,6 +7,8 @@ import { useRouter } from "next/navigation";
 import Cookies from "js-cookie";
 import UserProfile from "../(user)/UserProfile";
 import Link from "next/link";
+import Drawer from "./drawer/Drawer";
+
 const Navbar = () => {
   const navigator = useRouter();
   const logOut = () => {
@@ -36,17 +38,17 @@ const Navbar = () => {
           </div>
           <div className="ml-7">
             <ul className="flex items-center">
-              <Link href={"/collection/men"}>
+              <Link href={"/collection/MEN"}>
                 <li className="mx-3 text-sm font-medium hover:text-blue-500 cursor-pointer">
                   MEN
                 </li>
               </Link>
-              <Link href={"/collection/women"}>
+              <Link href={"/collection/WOMEN"}>
                 <li className="mx-3 text-sm font-medium hover:text-blue-500 cursor-pointer">
                   WOMEN
                 </li>
               </Link>
-              <Link href={"/collection/all"}>
+              <Link href={"/collection/COLLECTION"}>
                 <li className="mx-3 text-sm font-medium hover:text-blue-500 cursor-pointer">
                   COLLECTION
                 </li>
@@ -76,18 +78,40 @@ const Navbar = () => {
                 CONTACT
               </li>
             </Link>
-            <li className="mx-3 cursor-pointer  ">
-              <label htmlFor="my-drawer-4">
+            <li className="mx-3 ">
+              <label
+                htmlFor="cart"
+                className="cursor-pointer hover:text-blue-500"
+              >
                 <Image src={cart} alt="cart" width={24} />
               </label>
             </li>
-            <li className="mx-3 cursor-pointer relative" onClick={OpenProfile}>
-              <Image src={user} alt="cart" width={24} />
+            <li
+              className="mx-3 cursor-pointer relative hover:text-blue-500"
+              onClick={OpenProfile}
+            >
+              <Image
+                src={user}
+                alt="user"
+                width={24}
+                className="text-red-300"
+              />
             </li>
           </ul>
         </div>
       </div>
       <UserProfile logout={logOut} />
+      <Drawer id="cart" width={30} position="drawer-end">
+        <div className="relative h-screen">
+          <div className=" p-4 flex items-center justify-start">
+            <h4 className="text-black text-lg">Shopping Cart</h4>
+          </div>
+          <hr className="w-full" />
+          <div className="absolute left-4 right-4 bottom-4 cursor-pointer  bg-secondary flex items-center justify-center text-white">
+            <h4 className="py-3  text-base">Continue Shoping</h4>
+          </div>
+        </div>
+      </Drawer>
     </nav>
   );
 };

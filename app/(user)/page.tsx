@@ -1,13 +1,13 @@
 import Image from "next/image";
-import Navbar from "../components/Navbar";
+
 import lanpage from "@/public/image/lanpage.jpg";
 import Buttons from "../components/Buttons/Buttons";
-import Drawyer from "../components/Drawyer/Drawyer";
+
 export default function Home() {
   return (
     <main className="flex  flex-col  overflow-x-hidden">
       {/* <Navbar /> */}
-      <section className="bg-red-300 h-full mx-[3%] relative">
+      <section className="h-full mx-[3%] relative">
         <Image
           src={lanpage}
           alt="landpage"
@@ -32,7 +32,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <Drawyer />
     </main>
   );
 }

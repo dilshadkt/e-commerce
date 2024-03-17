@@ -6,7 +6,7 @@ const Load = () => {
     <>
       <div className="fixed top-0 left-0 bottom-0 right-0 m-auto bg bg-black opacity-60"></div>
       <div className="fixed top-0 left-0 bottom-0 right-0 m-auto flex items-center justify-center ">
-        <Image src={load} alt="load animation" />
+        <Image src={load} alt="load animation" unoptimized />
       </div>
     </>
   );
